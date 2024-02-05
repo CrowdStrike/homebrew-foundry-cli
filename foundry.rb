@@ -5,23 +5,27 @@
 class Foundry < Formula
   desc ""
   homepage ""
-  version "0.0.15"
+  version "0.0.16"
+
+  depends_on "git" => :optional
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://assets.foundry.crowdstrike.com/cli/latest/foundry_Darwin_arm64.tar.gz"
-      sha256 "be38fe4938dd90ac688d016679637702bbea076d5b2f1b12ee84486b78d25ce9"
+      sha256 "1b5ba680ec23e5d22e532264701c9b7f879ccc42d055a3d6fc7ad62ca4ce2d0d"
 
       def install
         bin.install "foundry"
+        generate_completions_from_executable(bin/"foundry", "completion", base_name: "foundry")
       end
     end
     if Hardware::CPU.intel?
       url "https://assets.foundry.crowdstrike.com/cli/latest/foundry_Darwin_x86_64.tar.gz"
-      sha256 "5e6df473288ca21e96bffa09568be290b211ac76eb7826d28c9b0de9802deabb"
+      sha256 "43ed5bd342ce743c69e890640fc5e920c183d2dcf6d845c5feca5f30f7ef08a5"
 
       def install
         bin.install "foundry"
+        generate_completions_from_executable(bin/"foundry", "completion", base_name: "foundry")
       end
     end
   end
@@ -29,18 +33,20 @@ class Foundry < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://assets.foundry.crowdstrike.com/cli/latest/foundry_Linux_arm64.tar.gz"
-      sha256 "58844200ff572e32c3a8662535f9bd93f7735bacd82cc562eb82c0df690fca6f"
+      sha256 "888ebb8437cddbd204c2b992d70a0cd0d64d22f8fb34400cb296233857ce8a6c"
 
       def install
         bin.install "foundry"
+        generate_completions_from_executable(bin/"foundry", "completion", base_name: "foundry")
       end
     end
     if Hardware::CPU.intel?
       url "https://assets.foundry.crowdstrike.com/cli/latest/foundry_Linux_x86_64.tar.gz"
-      sha256 "d862645d4b35b9518bd5e76824ece309577550c07407a71481f9f81f6ca70a30"
+      sha256 "41e8a02a0b6993847aa2ec194d6fad1a50a8ee45394c97098bb7a256daafc4c3"
 
       def install
         bin.install "foundry"
+        generate_completions_from_executable(bin/"foundry", "completion", base_name: "foundry")
       end
     end
   end
