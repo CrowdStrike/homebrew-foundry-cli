@@ -5,14 +5,14 @@
 class Foundry < Formula
   desc ""
   homepage ""
-  version "1.4.0"
+  version "1.4.1"
 
   depends_on "git" => :optional
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://assets.foundry.crowdstrike.com/cli/latest/foundry_Darwin_arm64.tar.gz"
-      sha256 "5b0debe8248d189bf1bae9c3bfd84d16205b02c0dbe67d3b72cd1a46f4f7c846"
+      sha256 "b7b963888e96573e125db9e8d373e2a1983b9d376cbcd184f1fb6c2bd521f47e"
 
       def install
         bin.install "foundry"
@@ -20,7 +20,7 @@ class Foundry < Formula
     end
     if Hardware::CPU.intel?
       url "https://assets.foundry.crowdstrike.com/cli/latest/foundry_Darwin_x86_64.tar.gz"
-      sha256 "6be8a6a4b1d87fa6eb64ab338cb6908a16621f66957f79e3965e84efcc6fb5c8"
+      sha256 "20091c77f993c4d50562d281ca70a36c4a0eea71347c4598c4abc0cc00257061"
 
       def install
         bin.install "foundry"
@@ -31,7 +31,7 @@ class Foundry < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://assets.foundry.crowdstrike.com/cli/latest/foundry_Linux_arm64.tar.gz"
-      sha256 "fd373138ad6fc48114072dcc656758d50e31050f1b16505b9672c9b75af8408b"
+      sha256 "984ceeedcb0458a326e4536f6302f0a09cd804fd9e9a5481954a3fdb70c20770"
 
       def install
         bin.install "foundry"
@@ -39,7 +39,7 @@ class Foundry < Formula
     end
     if Hardware::CPU.intel?
       url "https://assets.foundry.crowdstrike.com/cli/latest/foundry_Linux_x86_64.tar.gz"
-      sha256 "f68b3c1578fe311b3c56ed5dcc72d28410d94e747ede0170beedf5835b7715bf"
+      sha256 "f6c727cfa386e65f7e579e8a6c7557447c39457f42e4e046c1dc8c2b61199510"
 
       def install
         bin.install "foundry"
